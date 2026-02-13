@@ -1,17 +1,16 @@
-# Welcome 
+# Bem-vindo!
 # Mini Checkout
 ## Project info
 Sistema simples de checkout construído com **React + TypeScript + Supabase**.
 ## Funcionalidades
-## How can I edit this code?
+## Como eu edito esse código?
 - **Cadastro de Produtos** — nome e preço
 - **Criação de Pedidos** — status ABERTO / FINALIZADO
 - **Adição de Itens** — vincula produtos a pedidos com quantidade
 - **Finalização de Pedido** — bloqueia alterações e calcula total automaticamente
 - **Cálculo automático de total** — trigger no banco recalcula ao adicionar/remover itens
-There are several ways of editing your application.
 ## Stack
-**Use Lovable**
+
 | Camada    | Tecnologia                        |
 | --------- | --------------------------------- |
 | Frontend  | React 18, TypeScript, Vite        |
@@ -39,7 +38,7 @@ produtos (id, nome, preco)
 pedidos (id, status, total)
 itens_pedido (id, pedido_id, produto_id, quantidade)
 ```
-O unico requeirimento é ter Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+O unico requeirimento é ter Node.js & npm instalados - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 Segue o passo a passo:
 ## Rodando localmente
 ```sh
@@ -64,12 +63,7 @@ O backend já está na nuvem — não precisa configurar nada extra.
 2. Crie um novo pedido (status: ABERTO)
 3. Adicione itens ao pedido
 4. Finalize o pedido
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-## Deploy
+5. 
 ## Quais tecnologias foram usadas para esse projeto?
 Esse projeto foi construído com:
 - Vite
