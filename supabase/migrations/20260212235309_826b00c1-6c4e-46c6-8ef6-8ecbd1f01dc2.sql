@@ -1,5 +1,5 @@
 
--- Tabela de produtos
+--*Tabela de produtos
 CREATE TABLE public.produtos (
   id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
   nome TEXT NOT NULL,
@@ -7,7 +7,7 @@ CREATE TABLE public.produtos (
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
 );
 
--- Tabela de pedidos
+--*Tabela de pedidos
 CREATE TABLE public.pedidos (
   id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
   status TEXT NOT NULL DEFAULT 'ABERTO' CHECK (status IN ('ABERTO', 'FINALIZADO')),
@@ -15,7 +15,7 @@ CREATE TABLE public.pedidos (
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
 );
 
--- Tabela de itens do pedido
+--*Tabela de itens do pedido
 CREATE TABLE public.itens_pedido (
   id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
   pedido_id UUID NOT NULL REFERENCES public.pedidos(id) ON DELETE CASCADE,
