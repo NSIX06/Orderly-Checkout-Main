@@ -47,7 +47,7 @@ export function useCriarProduto() {
   });
 }
 
-//*---- PEDIDOS ----
+// ---- PEDIDOS ----
 
 export function usePedidos() {
   return useQuery({
@@ -99,7 +99,7 @@ export function useAdicionarItem() {
     }) => {
       if (quantidade <= 0) throw new Error("Quantidade deve ser maior que zero");
 
-      //*Check order status
+      // Check order status
       const { data: pedido, error: pedidoErr } = await supabase
         .from("pedidos")
         .select("status")
@@ -110,7 +110,7 @@ export function useAdicionarItem() {
       if (pedido.status === "FINALIZADO")
         throw new Error("Pedido finalizado não pode receber novos itens");
 
-      //*Check product exists
+      // Check product exists
       const { data: produto, error: prodErr } = await supabase
         .from("produtos")
         .select("id")

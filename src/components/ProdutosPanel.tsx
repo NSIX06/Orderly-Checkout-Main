@@ -49,7 +49,7 @@ export function ProdutosPanel() {
                 id="preco-produto"
                 type="number"
                 step="0.01"
-                min="0"
+                min="1"
                 value={preco}
                 onChange={(e) => setPreco(e.target.value)}
                 placeholder="29.90"
