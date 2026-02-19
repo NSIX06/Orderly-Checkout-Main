@@ -1,73 +1,68 @@
 # Bem-vindo!
-# Mini Checkout
-## Project info
-Sistema simples de checkout construído com **React + TypeScript + Supabase**.
-## Funcionalidades
-## Como eu edito esse código?
-- **Cadastro de Produtos** — nome e preço
-- **Criação de Pedidos** — status ABERTO / FINALIZADO
-- **Adição de Itens** — vincula produtos a pedidos com quantidade
-- **Finalização de Pedido** — bloqueia alterações e calcula total automaticamente
-- **Cálculo automático de total** — trigger no banco recalcula ao adicionar/remover itens
-## Stack
-
-| Camada    | Tecnologia                        |
-| --------- | --------------------------------- |
-| Frontend  | React 18, TypeScript, Vite        |
-| Estilo    | Tailwind CSS, shadcn/ui           |
-| Backend   | Supabase                          |
-| Estado    | TanStack React Query              |
-
-## Estrutura principal
-Changes made via Lovable will be committed automatically to this repo.
-```
-src/
-├── components/
-│   ├── ProdutosPanel.tsx   # CRUD de produtos
-│   └── PedidosPanel.tsx    # Gestão de pedidos e itens
-├── hooks/
-│   └── useCheckout.ts      # Hooks de dados (queries + mutations)
-├── pages/
-│   └── Index.tsx            # Página principal
-└── integrations/
-    └── supabase/            # Client e tipos (auto-gerados)
-```
-## Modelo de dados
-
-produtos (id, nome, preco)
-pedidos (id, status, total)
-itens_pedido (id, pedido_id, produto_id, quantidade)
-```
-O unico requeirimento é ter Node.js & npm instalados - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-Segue o passo a passo:
-## Rodando localmente
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-# Step 3: Install the necessary dependencies.
-npm i
-# Step 4: Start the development server with auto-reloading and an instant preview.
-git clone <URL_DO_REPO>
-cd <NOME_DO_PROJETO>
+Orderly Checkout - Mini Sistema de
+Pedidos
+Este projeto é um mini sistema de e-commerce focado na gestão de produtos e
+pedidos, desenvolvido para a disciplina de Qualidade de Software. O sistema permite
+o cadastro de produtos, criação de pedidos, adição de itens e finalização de vendas
+com cálculo automático de totais.
+🚀
+Como Rodar o Projeto
+Pré-requisitos
+Node.js (v ou superior)
+npm ou pnpm
+Passo a Passo
+. Clonar o repositório:
+git clone https://github.com/NSIX06/orderly-checkout-main.git
+cd orderly-checkout-main
+. Instalar dependências:
 npm install
+. Rodar em modo de desenvolvimento:
 npm run dev
-```
-**Edite um arquivo diretamente no GitHub**
-O backend já está na nuvem — não precisa configurar nada extra.
-
-## Fluxo de uso
-**Use GitHub Codespaces**
-1. Cadastre produtos com nome e preço
-2. Crie um novo pedido (status: ABERTO)
-3. Adicione itens ao pedido
-4. Finalize o pedido
-5. 
-## Quais tecnologias foram usadas para esse projeto?
-Esse projeto foi construído com:
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+O projeto estará disponível em 
+http://localhost:8080 (ou na porta indicada
+no terminal).
+. Executar testes automatizados:
+npm test
+🛣
+Rotas e Endpoints (Integração Supabase)
+O projeto utiliza o Supabase como Backend-as-a-Service (BaaS). As interações
+ocorrem através da biblioteca cliente do Supabase, mapeando para as seguintes
+operações no banco de dados:
+Produtos
+Listar Produtos: 
+GET /rest/v1/produtos (via 
+Criar Produto: 
+useProdutos )
+POST /rest/v1/produtos (via 
+useCriarProduto )
+Pedidos
+Payload: 
+{ "nome": string, "preco": number }
+Listar Pedidos: 
+GET /rest/v1/pedidos?
+select=*,itens_pedido(*,produtos(*)) (via 
+Criar Pedido: 
+usePedidos )
+POST /rest/v1/pedidos (via 
+useCriarPedido )
+Status inicial: 
+ABERTO
+Adicionar Item: 
+POST /rest/v1/itens_pedido (via 
+Payload: 
+useAdicionarItem )
+{ "pedido_id": UUID, "produto_id": UUID, "quantidade":
+number }
+Finalizar Pedido: 
+PATCH /rest/v1/pedidos?id=eq.{id} (via
+useFinalizarPedido )
+Atualiza status para 
+FINALIZADO
+�
+�
+Tecnologias Utilizadas
+Frontend: React + TypeScript + Vite
+UI: Tailwind CSS + shadcn/ui
+Backend/Banco de Dados: Supabase (PostgreSQL)
+Gerenciamento de Estado: TanStack Query (React Query)
+Testes: Vites
