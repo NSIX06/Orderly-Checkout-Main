@@ -137,7 +137,7 @@ useCriarProduto
 
 Listar pedidos
 
-GET /rest/v1/pedidos?select=*,itens_pedido(*,produtos(*))
+GET 'link do projeto'/rest/v1/pedidos
 
 
 Hook:
@@ -147,7 +147,7 @@ usePedidos
 
 Criar pedido
 
-POST /rest/v1/pedidos
+POST 'link do projeto'/rest/v1/pedidos
 
 
 Status inicial:
@@ -162,7 +162,7 @@ useCriarPedido
 
 Adicionar item ao pedido
 
-POST /rest/v1/itens_pedido
+POST 'link do projeto'/rest/v1/itens_pedido
 
 
 Payload:
@@ -181,7 +181,7 @@ useAdicionarItem
 
 Finalizar pedido
 
-PATCH /rest/v1/pedidos?id=eq.{id}
+PATCH 'link do projeto'/rest/v1/pedidos?id=eq.{id}
 
 
 Status atualizado para:
